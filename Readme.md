@@ -4,9 +4,9 @@
 
   really easy way to scaffold new views, models, controllers, components, etc.
 
-# usage
+# example
 
-create component scaffolding:
+to create a component scaffolding:
 
 ```bash
 mkdir -p components/{a,b,c}
