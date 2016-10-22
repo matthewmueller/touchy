@@ -21,6 +21,11 @@ Then find and replace all `__NAME__` with the name of the component
 go get github.com/matthewmueller/touchy
 ```
 
+# like-to-haves
+
+- look for any __VARIABLE__ or {{VARIABLE}} and ask what you want to put there.
+- better errors
+
 # license
 
 MIT

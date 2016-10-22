@@ -75,6 +75,9 @@ func main() {
 		if error != nil {
 			log.Fatal(err)
 		}
+		if resp.StatusCode != 200 {
+			log.Fatalf("Could not find %s", urlParts.String())
+		}
 		defer resp.Body.Close()
 
 		body, error := ioutil.ReadAll(resp.Body)
