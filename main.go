@@ -1,7 +1,6 @@
 package main
 
 import (
-	"fmt"
 	"io/ioutil"
 	"log"
 	"net/http"
@@ -30,8 +29,6 @@ func main() {
 	if err != nil {
 		log.Fatalf("error: %s", err)
 	}
-
-	fmt.Println(args["<gist>"])
 
 	urlParts, err := url.Parse(args["<gist>"].(string))
 	if err != nil {
@@ -70,10 +67,9 @@ func main() {
 		}
 
 		urlParts.Path += path.Base(filepath)
-		fmt.Println(urlParts.String())
 		resp, error := netClient.Get(urlParts.String())
 		if error != nil {
-			log.Fatal(err)
+			log.Fatal(error)
 		}
 		if resp.StatusCode != 200 {
 			log.Fatalf("Could not find %s", urlParts.String())
@@ -82,7 +78,7 @@ func main() {
 
 		body, error := ioutil.ReadAll(resp.Body)
 		if error != nil {
-			log.Fatal(err)
+			log.Fatal(error)
 		}
 
 		error = ioutil.WriteFile(filepath, body, 0644)
