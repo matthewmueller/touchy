@@ -1,6 +1,6 @@
 # touchy
 
-  little touch tool with gist support.
+  little touch tool with gist support. doesn't overwrite existing files.
 
   really easy way to scaffold new views, models, controllers, components, etc.
 
